@@ -13,8 +13,8 @@ for (const file of files) {
       {
         const subfolder = path.join(mainPath, "PDF");
         fs.mkdirSync(subfolder, { recursive: true });
-        const source = path.join("downloads", file);
-        const destination = path.join("downloads", "PDF", file);
+        const source = path.join(mainPath, file);
+        const destination = path.join(subfolder, file);
         fs.renameSync(source, destination);
       }
       break;
@@ -23,8 +23,8 @@ for (const file of files) {
       {
         const subfolder = path.join(mainPath, "JPG");
         fs.mkdirSync(subfolder, { recursive: true });
-        const source = path.join("downloads", file);
-        const destination = path.join("downloads", "JPG", file);
+        const source = path.join(mainPath, file);
+        const destination = path.join(subfolder, file);
         fs.renameSync(source, destination);
       }
       break;
@@ -33,8 +33,8 @@ for (const file of files) {
       {
         const subfolder = path.join(mainPath, "PNG");
         fs.mkdirSync(subfolder, { recursive: true });
-        const source = path.join("downloads", file);
-        const destination = path.join("downloads", "PNG", file);
+        const source = path.join(mainPath, file);
+        const destination = path.join(subfolder, file);
         fs.renameSync(source, destination);
       }
       break;
@@ -43,8 +43,8 @@ for (const file of files) {
       {
         const subfolder = path.join(mainPath, "MP3");
         fs.mkdirSync(subfolder, { recursive: true });
-        const source = path.join("downloads", file);
-        const destination = path.join("downloads", "MP3", file);
+        const source = path.join(mainPath, file);
+        const destination = path.join(subfolder, file);
         fs.renameSync(source, destination);
       }
       break;
@@ -53,8 +53,8 @@ for (const file of files) {
       {
         const subfolder = path.join(mainPath, "MP4");
         fs.mkdirSync(subfolder, { recursive: true });
-        const source = path.join("downloads", file);
-        const destination = path.join("downloads", "MP4", file);
+        const source = path.join(mainPath, file);
+        const destination = path.join(subfolder, file);
         fs.renameSync(source, destination);
       }
       break;
@@ -63,12 +63,17 @@ for (const file of files) {
       {
         const subfolder = path.join(mainPath, "TEXT");
         fs.mkdirSync(subfolder, { recursive: true });
-        const source = path.join("downloads", file);
-        const destination = path.join("downloads", "TEXT", file);
+        const source = path.join(mainPath, file);
+        const destination = path.join(subfolder, file);
         fs.renameSync(source, destination);
       }
       break;
+    // default: {
+    //   const subfolder = path.join(mainPath, "OTHERS");
+    //   fs.mkdirSync(subfolder, { recursive: true });
+    //   const source = path.join(mainPath, file);
+    //   const destination = path.join(subfolder, file);
+    //   fs.renameSync(source, destination);
+    // }
   }
 }
-const mainPath = "downloads";
-console.log(path.join(mainPath, "test"));
